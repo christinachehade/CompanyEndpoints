@@ -20,10 +20,11 @@
   margin: 0 auto;
   padding: 50px;
   cursor: pointer;
+  color: rgb(6, 51, 110);
 }
 
 .company-name{
-  color: rgb(122, 121, 121);
+  color: rgb(6, 51, 110);
   text-align: center;
   text-transform: uppercase;
   height: 45px;
@@ -33,10 +34,11 @@
 }
 
 .number-nav div:active{
-font-weight: bold;
+text-decoration: underline;
 }
 
 .page-number{
   padding-left: 10px;
   padding-bottom: 30px;
+  color: rgb(6, 51, 110);
 }
