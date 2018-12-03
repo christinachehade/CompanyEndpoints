@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route } from "react-router-dom"
+import CompaniesPage from "./components/CompaniesPage"
+import ExchangeFilter from "./components/ExchangeFilter"
+import Navigation from "./components/Navigation"
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <BrowserRouter>
+          <div>
+            <Route path='/page/:pageNum' exact render={(routerData) => <CompaniesPage key={routerData.match.params.pageNum} url={`?page=${routerData.match.params.pageNum}`} />} />
+            <Route path='/exchange/:exchange' exact render={(routerData) => <ExchangeFilter key={routerData.match.params.exchange} exchange={routerData.match.params.exchange} />} />
+            <Route path='/' exact render={() => <CompaniesPage url='' />} />
+            <div>
+              <Navigation />
+            </div>
+          </div>
+        </BrowserRouter>
       </div>
     );
   }
