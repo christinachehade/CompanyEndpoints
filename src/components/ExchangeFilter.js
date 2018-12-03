@@ -20,7 +20,7 @@ class ExchangeFilter extends Component{
     }
     render(){
         return (
-            <div style={{display:'flex', flexWrap:'wrap'}}>
+            <div>
                {this.state.companies.map(company=>company.logo?<CompanyCard logo={company.logo} name={company.name}/>:null)}
             </div>
         )
